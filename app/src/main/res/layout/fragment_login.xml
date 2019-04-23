@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:card_view="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="viewModel"
+            type="com.basemvvmkotlin.ui.login.LoginViewModel" />
+
+        <variable
+            name="frag"
+            type="com.basemvvmkotlin.ui.login.LoginFragment" />
+    </data>
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <EditText
+            android:id="@+id/edtUserName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+        <!--android:onQueryTextChange="@{viewModel.onTextChange()}"-->
+        <!--android:onTextChanged="@{(text, start, before, count) -> viewModel.onTextChange(text)}"-->
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:onClick="@{()->frag.onSubmit()}"
+            android:paddingBottom="@dimen/_10sdp"
+            android:paddingTop="@dimen/_5sdp"
+            android:text="TextView"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <android.support.v7.widget.CardView
+            android:id="@+id/card_subject"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_10sdp"
+            app:layout_constraintHorizontal_bias="0.75"
+            app:layout_constraintLeft_toRightOf="parent"
+            app:layout_constraintRight_toLeftOf="parent"
+            card_view:cardUseCompatPadding="true"
+            app:cardCornerRadius="@dimen/_50sdp">
+
+            <ImageView
+                android:id="@+id/iv_subject"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:contentDescription="@string/app_name"
+                android:src="@drawable/ic_launcher_background" />
+
+
+        </android.support.v7.widget.CardView>
+    </android.support.constraint.ConstraintLayout>
+</layout>
